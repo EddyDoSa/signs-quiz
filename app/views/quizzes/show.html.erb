@@ -5,8 +5,8 @@
       <div class="card-body">
         <h5 class="card-title">Question <%= index + 1 %>:</h5>
         <!--<p class="card-text"><%= question.content %></p>-->
-        <% if question.image.attached? %>
-          <%= image_tag question.image, class: "img-fluid mb-3" %>
+        <% if !question.image.file.nil? %>
+          <%= image_tag question.image_identifier, class: "img-fluid mb-3" %>
         <% end %>
         <% 1.upto(3) do |answer_index| %>
           <div class="form-check">

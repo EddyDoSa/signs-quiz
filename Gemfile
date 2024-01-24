@@ -79,5 +79,4 @@ gem "simple_form", "~> 5.3"
 gem "devise", "~> 4.9"
 gem 'foreman', github: 'ddollar/foreman'
 
-#gem 'jquery-rails'
-#gem 'cocoon'
+gem 'carrierwave', '~> 3.0'
