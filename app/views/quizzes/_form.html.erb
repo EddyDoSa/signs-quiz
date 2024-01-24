@@ -19,7 +19,8 @@
     <%= render "question_fields", f: question_fields %>
   <% end %>
   <div data-nested-form-target="target"></div>
-  <button type="button" data-action="nested-form#add">Add Question</button>
+  <button type="button" data-action="nested-form#add" class="btn btn-success">Add Question</button>
+  <br><br>
   <div class="actions">
     <%= form.submit class: "btn btn-primary" %>
   </div>
