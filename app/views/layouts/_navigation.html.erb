@@ -1,0 +1,48 @@
+
+<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      
+    </a>
+    <button class="navbar-toggler" type="button" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" data-bs-target="#navbarNav" data-bs-toggle="collapse">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div id="navbarNav" class="collapse navbar-collapse">
+      <% if current_user %>
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <%= link_to quizzes_path, class: "nav-link #{'active font-weight-bold' if (params[:controller] == 'quizzes')}" do %>
+              <i class="fas fa-hammer"></i>
+              Quizzes
+            <% end %>
+          </li>
+        </ul>
+      <% end %>
+  
+      <ul class=" navbar-nav ms-auto">
+        <% if current_user && current_user.role == "Admin" %>
+          <li class="nav-item">
+            <%= link_to users_path, class: "nav-link" do %>
+              <i class="fas fa-users"></i>
+              Users
+            <% end %>
+          </li>
+        <% end %>
+        <li class="nav-item">
+          <% if !user_signed_in? %>
+            <%= link_to new_user_session_path, class: "nav-link" do %>
+              <i class="fas fa-sign-in-alt"></i>
+              Sign in
+            <% end %>
+          <% else %>
+            <%= link_to destroy_user_session_path, data: { turbo_method: :delete }, class: "nav-link" do %>
+              <i class="fas fa-sign-out-alt"></i>
+              Sign out
+            <% end %>
+          <% end %>
+        </li>
+      </ul>
+     
+    </div>
+  </div>
+</nav>

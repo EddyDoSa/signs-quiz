@@ -1,0 +1,16 @@
+<%= form_with(model: @user, local: true) do |f| %> 
+
+  <div class="form-group row">
+      <%= f.label :role, "Role", class: "col-1 col-form-label" %>
+      <%= f.select(:role, User.roles, {}, { :class => 'col-5 form-control' }) %>
+  </div>
+
+  
+    <br>
+  <div class="actions">
+      <%= f.submit "Save", class: "btn btn-primary " %>
+  </div>
+
+  
+  
+<% end %>
