@@ -17,8 +17,10 @@
         <tr class ="center">
           <td><%= user.email %></td>
           <td><%= user.role %> </td>
-            <td width = "10"><%= link_to 'Edit', edit_user_path(user), class:"btn btn-secondary" if !user.admin? %></td>
-            <td width = "10"><%= link_to 'Delete', user, data: { "turbo-method": :delete, confirm: 'Are you sure?' }, class:"btn btn-danger" if !user.admin?%></td>
+            <td>
+              <%= link_to 'Edit', edit_user_path(user), class:"btn btn-secondary" if !user.admin? %>
+              <%= link_to 'Delete', user, data: { turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-danger"  if !user.admin?  %>
+           </td> 
         </tr>
       <% end %>
     </tbody>
