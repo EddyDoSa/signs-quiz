@@ -80,3 +80,5 @@ gem "devise", "~> 4.9"
 gem 'foreman', github: 'ddollar/foreman'
 
 gem 'carrierwave', '~> 3.0'
+
+gem "pundit", "~> 2.3"

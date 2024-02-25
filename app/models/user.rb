@@ -8,4 +8,10 @@ class User < ApplicationRecord
   def self.roles
     ROLES.map { |role| [role, role] }
   end
+  
+  
+  def admin?
+    self.role == "Admin"
+  end
+  
 end

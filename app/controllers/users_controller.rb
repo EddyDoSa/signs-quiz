@@ -3,12 +3,17 @@ class UsersController < ApplicationController
   
   def index
     @users = User.all  
+    authorize @users
   end
   
-    def edit
+  def edit
+    
+    authorize @user
   end
   
   def update
+    authorize @user
+    
     respond_to do |format|
       if @user.update(user_params)
         format.html { redirect_to users_url, notice: 'Ο χρήστης τροποποιήθηκε...' }
@@ -22,6 +27,8 @@ class UsersController < ApplicationController
   
   def destroy
     #Owner cannot be deleted plus a manager should not be able to delete himself 
+    
+    authorize @user
 
     @user.destroy
   

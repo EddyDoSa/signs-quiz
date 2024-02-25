@@ -20,7 +20,7 @@
       <% end %>
   
       <ul class=" navbar-nav ms-auto">
-        <% if current_user && current_user.role == "Admin" %>
+        <% if current_user && current_user.admin? %>
           <li class="nav-item">
             <%= link_to users_path, class: "nav-link" do %>
               <i class="fas fa-users"></i>

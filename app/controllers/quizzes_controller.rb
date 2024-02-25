@@ -14,15 +14,20 @@ class QuizzesController < ApplicationController
   def new
     @quiz = Quiz.new
     @quiz.questions.build
+    
+    authorize @quiz
   end
 
   # GET /quizzes/1/edit
   def edit
+    authorize @quiz
   end
 
   # POST /quizzes or /quizzes.json
   def create
     @quiz = Quiz.new(quiz_params)
+    
+    authorize @quiz
 
     respond_to do |format|
       if @quiz.save
@@ -50,6 +55,8 @@ class QuizzesController < ApplicationController
 
   # DELETE /quizzes/1 or /quizzes/1.json
   def destroy
+    authorize @quiz
+    
     @quiz.destroy!
 
     respond_to do |format|
