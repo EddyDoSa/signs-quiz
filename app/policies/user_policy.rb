@@ -3,7 +3,7 @@
 class UserPolicy < ApplicationPolicy
 
   def index?
-    @user.role == "Admin"
+    @user.admin?
   end
 
   def show?

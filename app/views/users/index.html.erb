@@ -19,7 +19,7 @@
           <td><%= user.role %> </td>
             <td>
               <%= link_to 'Edit', edit_user_path(user), class:"btn btn-secondary" if !user.admin? %>
-              <%= link_to 'Delete', user, data: { turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-danger"  if !user.admin?  %>
+              <%= link_to 'Delete', user, data: { turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-danger" if !user.admin?  %>
            </td> 
         </tr>
       <% end %>

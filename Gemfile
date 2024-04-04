@@ -75,10 +75,11 @@ group :test do
   gem "selenium-webdriver"
 end
 
-gem "simple_form", "~> 5.3"
-gem "devise", "~> 4.9"
 gem 'foreman', github: 'ddollar/foreman'
 
 gem 'carrierwave', '~> 3.0'
 
+# These are the 3 gems we used in our application
+gem "simple_form", "~> 5.3"
+gem "devise", "~> 4.9"
 gem "pundit", "~> 2.3"
